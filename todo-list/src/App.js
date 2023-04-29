@@ -13,6 +13,7 @@ function App() {
         { id: crypto.randomUUID(), title: newItem, completed: false },
       ];
     });
+    setNewItem("");
   }
   console.log(todos);
   return (
