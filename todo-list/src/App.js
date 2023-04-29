@@ -3,9 +3,18 @@ import "./App.css";
 
 function App() {
   const [newItem, setNewItem] = useState("");
+  const [todos, setTodos] = useState([]);
   function handleSubmit(e) {
     e.preventDefault();
+
+    setTodos((currentTodos) => {
+      return [
+        ...currentTodos,
+        { id: crypto.randomUUID(), title: newItem, completed: false },
+      ];
+    });
   }
+  console.log(todos);
   return (
     <>
       <form onSubmit={handleSubmit} className="new-item-form">
